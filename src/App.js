@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import { useTranslation, Trans } from 'react-i18next';
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
+  const counter = useSelector(state => state);
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -18,6 +21,17 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>{t('bienvenido')}</h2>
       </header>
+      <main>
+        <p>{counter.num}</p>
+        <button
+          onClick={() => dispatch({
+            type: "INCREMENT",
+            step: 1
+          })}
+        >
+          +
+        </button>
+      </main>
     </div>
   );
 }
