@@ -37,4 +37,5 @@ yarn-error.log*
 .vs
 #Eslint
 .eslintcache
-
+.eslintrc.js
+.prettierrc.js
