@@ -1,14 +1,9 @@
-function reducer(state = { num: 0 }, action) {
+function reducer(state = { stocks: [] }, action) {
   switch (action.type) {
-    case 'INCREMENT':
+    case 'ADD':
       return {
         ...state,
-        num: state.num + action.step,
-      };
-    case 'DECREMENT':
-      return {
-        ...state,
-        num: state.num - action.step,
+        stocks: state.stocks.push(action.stock)
       };
     default:
       return state;
