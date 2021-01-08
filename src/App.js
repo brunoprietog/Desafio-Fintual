@@ -2,10 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { useTranslation, Trans } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-
+import NavBar from './components/NavBar';
 function App() {
+  //Redux
   const counter = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  //i18next
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -15,6 +18,7 @@ function App() {
   const index = 11;
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <button onClick={() => changeLanguage('es')}>ESPAÑOL</button>
         <button onClick={() => changeLanguage('en')}>INGLES</button>
@@ -30,9 +34,7 @@ function App() {
               step: 1,
             })
           }
-        >
-          +
-        </button>
+        ></button>
       </main>
     </div>
   );

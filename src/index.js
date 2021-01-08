@@ -7,7 +7,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
-
 //UI
 import { ChakraProvider } from '@chakra-ui/react';
 

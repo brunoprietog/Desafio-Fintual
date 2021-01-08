@@ -24,6 +24,9 @@ class Portfolio {
   constructor(name) {
     this.name = name;
     this.#stocks = {};
+    stocks = {
+      funtual: 500,
+    };
   }
   addStock(stock, numberOfStocks) {
     //TODO: Si existe el stock, no debe reescribirlo, debe agregar al lote
@@ -36,19 +39,22 @@ class Portfolio {
     //  };
     //}
     //else {
-      this.#stocks = {
-        ...this.#stocks,
-        [company]: { pricePerDate, numberOfStocks },
-      };
+    this.#stocks = {
+      ...this.#stocks,
+      [company]: { pricePerDate, numberOfStocks },
+    };
     //}
   }
   profit(initialDate, finalDate) {
     var finalProfit = 0;
-    this.stocks.map((item) => {
+    for (var item in this.stocks) {
       var prices = item.getPricePerDate();
+      console.log(prices);
+      console.log(item.numberOfStocks);
       var individualProfit = (prices[finalDate] - prices[initialDate]) * item.numberOfStocks;
       finalProfit += individualProfit;
-    });
+      return 0;
+    }
     return finalProfit;
   }
 }
@@ -61,5 +67,4 @@ myPortfolio = new Portfolio('My Portfolio');
 myPortfolio.addStock(fintualStock, 4);
 //myPortfolio.addStock(fintualStock, 4);
 //myPortfolio.addStock(cornershopStock, 4);
-console.log(myPortfolio.stocks);
-console.log(myPortfolio.profit('Ayer', 'Hoy'));
+myPortfolio.profit('Ayer', 'Hoy');
