@@ -12,14 +12,15 @@ i18n
         translations: {
           bienvenido: 'Bienvenido',
           portfolio: 'Portafolio',
-          addOrModifyStock: 'Añade o modifica una acción',
-          stock: 'Acción',
+          addOrModifyStock: 'AÃ±ade o modifica una acciÃ³n',
+          stock: 'AcciÃ³n',
           date: 'Fecha',
           price: 'Precio',
           close: 'Cerrar',
-          formHelperStock: 'Introduce el nombre de la compañía',
-          formHelperDate: 'Introduce la fecha a la que quieres asignar el precio de la acción',
-          formHelperPrice: 'Introduce el precio que tenía la acción en esa fecha, usa . como separador decimal si es necesario',
+          formHelperStock: 'Introduce el nombre de la compaÃ±Ã­a',
+          formHelperDate: 'Introduce la fecha a la que quieres asignar el precio de la acciÃ³n',
+          formHelperPrice:
+            'Introduce el precio que tenÃ­a la acciÃ³n en esa fecha, usa . como separador decimal si es necesario',
         },
       },
       en: {

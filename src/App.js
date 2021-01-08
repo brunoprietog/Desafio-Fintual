@@ -1,12 +1,20 @@
 import {
-  Button, FormControl, Input,
-  FormHelperText, FormLabel, Modal,
+  Button,
+  FormControl,
+  Input,
+  FormHelperText,
+  FormLabel,
+  Modal,
   ModalBody,
-  ModalCloseButton, ModalContent,
-  ModalFooter, ModalHeader, ModalOverlay, useDisclosure
-} from "@chakra-ui/react";
-import { useState } from "react";
-import { Stock, Portfolio } from "./profit2";
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { useState } from 'react';
+import { Stock, Portfolio } from './profit2';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
@@ -27,22 +35,22 @@ function App() {
 
   const index = 11;
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [stock, setStock] = useState("");
-  const [date, setDate] = useState("");
+  const [stock, setStock] = useState('');
+  const [date, setDate] = useState('');
   const [price, setPrice] = useState();
-  const addStock = event => {
+  const addStock = (event) => {
     event.preventDefault();
     var stockObject = new Stock(stock);
     stockObject.setPricePerDate(date, price);
-    if (stock == "Fintual") {
+    if (stock == 'Fintual') {
       dispatch({
         type: 'ADD',
         stock: stockObject,
-      })
+      });
     }
     alert(`${stock}`);
     console.log(stocksState.stocks);
-  }
+  };
 
   console.log(stocksState.stocks);
   return (
@@ -56,7 +64,7 @@ function App() {
       </header>
       <main>
         <p>{t('portfolio')}</p>
-        {stocksState.stocks.length > 0 && stocksState.stocks.map(item => <p>{item.getCompany() }</p>)}
+        {stocksState.stocks.length > 0 && stocksState.stocks.map((item) => <p>{item.getCompany()}</p>)}
         <Button onClick={onOpen}>{t('addOrModifyStock')}</Button>
 
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -68,17 +76,17 @@ function App() {
               <ModalBody>
                 <FormControl id="stock">
                   <FormLabel>{t('stock')}</FormLabel>
-                  <Input type="text" name="stock" onChange={event => setStock(event.currentTarget.value)} />
+                  <Input type="text" name="stock" onChange={(event) => setStock(event.currentTarget.value)} />
                   <FormHelperText>{t('formHelperStock')}</FormHelperText>
                 </FormControl>
                 <FormControl id="date">
                   <FormLabel>{t('date')}</FormLabel>
-                  <Input type="date" name="date" onChange={event => setDate(event.currentTarget.value)} />
+                  <Input type="date" name="date" onChange={(event) => setDate(event.currentTarget.value)} />
                   <FormHelperText>{t('formHelperDate')}</FormHelperText>
                 </FormControl>
                 <FormControl id="price">
                   <FormLabel>{t('price')}</FormLabel>
-                  <Input type="number" name="price" onChange={event => setPrice(event.currentTarget.value)} />
+                  <Input type="number" name="price" onChange={(event) => setPrice(event.currentTarget.value)} />
                   <FormHelperText>{t('formHelperPrice')}</FormHelperText>
                 </FormControl>
               </ModalBody>
@@ -87,7 +95,9 @@ function App() {
                 <Button colorScheme="blue" mr={3} onClick={onClose}>
                   {t('close')}
                 </Button>
-                <Button variant="ghost" type="submit">Secondary Action</Button>
+                <Button variant="ghost" type="submit">
+                  Secondary Action
+                </Button>
               </ModalFooter>
             </form>
           </ModalContent>

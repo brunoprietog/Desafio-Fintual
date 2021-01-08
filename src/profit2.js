@@ -24,7 +24,7 @@ export class Portfolio {
   }
   addStock(company, numberOfStocks) {
     if (!this.#stocks.hasOwnProperty(company)) this.#stocks[company] = 0;
-    this.#stocks[company] += numberOfStocks
+    this.#stocks[company] += numberOfStocks;
   }
   profit(stocks, initialDate, finalDate) {
     var finalProfit = 0;
@@ -57,4 +57,3 @@ export class Portfolio {
 //console.log(myPortfolio.profit(stocks, 'Ayer', 'Hoy'));
 //fintualStock.setPricePerDate('Hoy', 2000);
 //console.log(myPortfolio.profit(stocks, 'Ayer', 'Hoy'));
-
