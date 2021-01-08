@@ -42,17 +42,12 @@ function App() {
     event.preventDefault();
     var stockObject = new Stock(stock);
     stockObject.setPricePerDate(date, price);
-    if (stock == 'Fintual') {
-      dispatch({
-        type: 'ADD',
-        stock: stockObject,
-      });
-    }
-    alert(`${stock}`);
-    console.log(stocksState.stocks);
+    dispatch({
+      type: 'ADD',
+      stock: stockObject,
+    });
+    onClose();
   };
-
-  console.log(stocksState.stocks);
   return (
     <div className="App">
       <NavBar />
