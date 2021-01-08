@@ -34,7 +34,7 @@ function App() {
               step: 1,
             })
           }
-        ></button>
+        >+</button>
       </main>
     </div>
   );
