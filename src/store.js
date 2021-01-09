@@ -3,7 +3,7 @@ function reducer(state = { stocks: [] }, action) {
     case 'ADD':
       return {
         ...state,
-        stocks: state.stocks.concat(action.stock)
+        stocks: state.stocks.concat(action.stock),
       };
     default:
       return state;

@@ -14,33 +14,32 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { Stock, Portfolio } from "./profit2";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { Stock, Portfolio } from "./profit2";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import logo from "./logo.svg";
 
 function App() {
-  //Redux
+  // Redux
   const stocksState = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  //i18next
+  // i18next
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
-  const index = 11;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [stock, setStock] = useState("");
   const [date, setDate] = useState("");
   const [price, setPrice] = useState();
   const addStock = (event) => {
     event.preventDefault();
-    var stockObject = new Stock(stock);
+    const stockObject = new Stock(stock);
     stockObject.setPricePerDate(date, price);
     dispatch({
       type: "ADD",

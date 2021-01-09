@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
-//UI
+// UI
 import { ChakraProvider } from '@chakra-ui/react';
 
 const store = createStore(reducer);
@@ -21,7 +21,7 @@ ReactDOM.render(
     </Provider>
     ,
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
